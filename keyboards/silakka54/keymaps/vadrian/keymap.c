@@ -7,7 +7,7 @@
 #define C_UNDO C(KC_Z)
 #define C_CUT C(KC_X)
 #define C_COPY C(KC_C)
-#define C_PASTE C(KC_P)
+#define C_PASTE C(KC_V)
 #define C_REDO C(KC_Y)
 
 // HRM keys
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,  KC_1,  KC_2,  KC_3,             KC_4,           KC_5,             KC_6,           KC_7,            KC_8,          KC_9,   KC_0,    KC_MINS,
         KC_TAB,  KC_Q,  KC_W,  KC_E,             KC_R,           KC_T,             KC_Y,           KC_U,            KC_I,          KC_O,   KC_P,    KC_EQL,
         C_ESC,   HRM_A, HRM_S, HRM_D,            HRM_F,          KC_G,             KC_H,           HRM_J,           HRM_K,         HRM_L,  HRM_SC,  KC_QUOT,
-        CW_TOGG, KC_Z,  KC_X,  KC_C,             KC_V,           KC_B,             KC_N,           KC_M,            KC_COMM,       KC_DOT, KC_SLSH, T_GAME,
+        CAPSWORD, KC_Z,  KC_X,  KC_C,             KC_V,           KC_B,             KC_N,           KC_M,            KC_COMM,       KC_DOT, KC_SLSH, T_GAME,
                                MED_ESC, NAV_SPC, MOU_TAB, SYM_ENT, NUM_BSP, FUN_DEL
     ),
     [GAME] = LAYOUT(
@@ -103,20 +103,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
-/* Turn off permissive hold for pinky keys
-bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        // Do not select the hold action when another key is tapped.
-        case HRM_A:
-        case HRM_SC:
-            return false;
-        // Immediately select the hold action when another key is tapped.
-        default:
-            return true;
-    }
-}
-*/
-
 // Higher tapping term for pinky keys
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -131,9 +117,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 // Chordal hold layout
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
-        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 
-        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 
-        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 
-        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
                        '*', '*', '*',  '*', '*', '*'
     );
