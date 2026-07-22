@@ -103,17 +103,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
-// Higher tapping term for pinky keys
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HRM_A:
-        case HRM_SC:
-            return TAPPING_TERM + 50;
-        default:
-            return TAPPING_TERM;
-    }
-}
-
 // Chordal hold layout
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
