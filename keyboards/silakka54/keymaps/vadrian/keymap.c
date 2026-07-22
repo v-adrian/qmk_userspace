@@ -103,6 +103,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
+// Shorter tapping term on Shift HRMs for faster activation
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HRM_F:
+        case HRM_J:
+            return 180;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 // Chordal hold layout
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
